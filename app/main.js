@@ -3,14 +3,10 @@ import LinearGradient from 'react-native-linear-gradient'
 import {
   StyleSheet,
   View,
-  BVLinearGradient,
-  ImageBackground,
   Text,
-  TouchableOpacity,
-  Image
 } from 'react-native';
-import { IconButton,Button, Colors,Avatar } from 'react-native-paper';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { IconButton, Colors,Avatar } from 'react-native-paper';
+
 
 const mySymbol = <IconButton
 icon="hospital-building"
@@ -47,63 +43,67 @@ size={150}
 style = {{position: 'relative', left: 250}}
 onPress={() => console.log('Pressed')}
 />;
-const myWeb = <IconButton
-icon="link"
-color={Colors.white}
-size={150}
-style = {{position: 'relative', left: 400}}
-onPress={() => console.log('Pressed')}
-/>;
-export default class app extends Component {
+
+export default class main extends Component {
+  constructor(props) {
+    super(props);
+  }
+  myWeb = <IconButton
+  icon="link"
+  color={Colors.white}
+  size={150}
+  style = {{position: 'relative', left: 400}}
+  onPress={() => this.props.navigation.navigate('Link')}
+  />;
   render() {
     return (
-      <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-        <Avatar.Image size={100} source={require('./tets.jpg')} />
-        <View style={{ flexDirection: 'row' }}>
-          <View>
-            {mySymbol}
+        <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+          <Avatar.Image size={100} source={require('./tets.jpg')} />
+          <View style={{ flexDirection: 'row' }}>
+            <View>
+              {mySymbol}
+            </View>
+            <View>
+              {myBus}
+            </View> 
+            <View>
+              {myNews}
+            </View> 
           </View>
-          <View>
-            {myBus}
-          </View> 
-          <View>
-            {myNews}
-          </View> 
-        </View>
-        <View style={{ flexDirection: 'row' }}>
-          <View>
-            <Text style = {{paddingLeft: 125,color:'yellow',fontSize:30,top: -50}}> 關於我們 </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <View>
+              <Text style = {{paddingLeft: 125,color:'yellow',fontSize:30,top: -50}}> 關於我們 </Text>
+            </View>
+            <View>
+              <Text style = {{paddingLeft: 280,color:'yellow',fontSize:30,top: -50}}> 交通資訊 </Text>
+            </View>
+            <View>
+              <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 最新消息 </Text>
+            </View>
           </View>
-          <View>
-            <Text style = {{paddingLeft: 280,color:'yellow',fontSize:30,top: -50}}> 交通資訊 </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <View>
+              {myMap}
+            </View>
+            <View>
+              {myQ}
+            </View> 
+            <View>
+              {this.myWeb}
+            </View> 
           </View>
-          <View>
-            <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 最新消息 </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <View>
+              <Text style = {{paddingLeft: 125,color:'yellow',fontSize:30,top: -50}}> 樓層引導 </Text>
+            </View>
+            <View>
+              <Text style = {{paddingLeft: 280,color:'yellow',fontSize:30,top: -50}}> 常見問答 </Text>
+            </View>
+            <View>
+              <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 社群連結 </Text>
+            </View>
           </View>
-        </View>
-        <View style={{ flexDirection: 'row' }}>
-          <View>
-            {myMap}
-          </View>
-          <View>
-            {myQ}
-          </View> 
-          <View>
-            {myWeb}
-          </View> 
-        </View>
-        <View style={{ flexDirection: 'row' }}>
-          <View>
-            <Text style = {{paddingLeft: 125,color:'yellow',fontSize:30,top: -50}}> 樓層引導 </Text>
-          </View>
-          <View>
-            <Text style = {{paddingLeft: 280,color:'yellow',fontSize:30,top: -50}}> 常見問答 </Text>
-          </View>
-          <View>
-            <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 社群連結 </Text>
-          </View>
-        </View>
-      </LinearGradient>
+        </LinearGradient>
     );
   }
 }
