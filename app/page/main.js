@@ -7,47 +7,50 @@ import {
 } from 'react-native';
 import { IconButton, Colors,Avatar } from 'react-native-paper';
 
-
-const mySymbol = <IconButton
-icon="hospital-building"
-color={Colors.blueGrey100}
-size={150}
-style = {{position: 'relative', left: 80}}
-onPress={() => console.log('Pressed')}
-/>;
-const myBus = <IconButton
-icon="bus"
-color={Colors.green300}
-size={150}
-style = {{position: 'relative', left: 250}}
-onPress={() => console.log('Pressed')}
-/>;
-const myNews = <IconButton
-icon="newspaper"
-color={Colors.purple200}
-size={150}
-style = {{position: 'relative', left: 400}}
-onPress={() => console.log('Pressed')}
-/>;
-const myMap = <IconButton
-icon="google-maps"
-color={Colors.indigo100}
-size={150}
-style = {{position: 'relative', left: 80}}
-onPress={() => console.log('Pressed')}
-/>;
-const myQ = <IconButton
-icon="help"
-color={Colors.red100}
-size={150}
-style = {{position: 'relative', left: 250}}
-onPress={() => console.log('Pressed')}
-/>;
-
 export default class main extends Component {
   constructor(props) {
     super(props);
   }
+  // mysymbol
+  mySymbol = <IconButton
+  icon="hospital-building"
+  color={Colors.blueGrey100}
+  size={150}
+  style = {{position: 'relative', left: 80}}
+  onPress={() => this.props.navigation.navigate('Introduction')}
+  />;
+  // traffic
+  myBus = <IconButton
+  icon="bus"
+  color={Colors.green300}
+  size={150}
+  style = {{position: 'relative', left: 250}}
+  onPress={() => console.log('Pressed')}
+  />;
+  //stethoscope
+  myStethoscope = <IconButton
+  icon="stethoscope"
+  color={Colors.purple200}
+  size={150}
+  style = {{position: 'relative', left: 400}}
+  onPress={() => console.log('Pressed')}
+  />;
+  //stairs information
+  myMap = <IconButton
+  icon="google-maps"
+  color={Colors.indigo100}
+  size={150}
+  style = {{position: 'relative', left: 80}}
+  onPress={() => console.log('Pressed')}
+  />;
+  //Q&A
+  myQ = <IconButton
+  icon="help"
+  color={Colors.red100}
+  size={150}
+  style = {{position: 'relative', left: 250}}
+  onPress={() => console.log('Pressed')}
+  />;
   //Social link
   myWeb = <IconButton
   icon="link"
@@ -63,13 +66,13 @@ export default class main extends Component {
           <Avatar.Image size={100} source={require('../img/symbol.jpg')} />
           <View style={{ flexDirection: 'row' }}>
             <View>
-              {mySymbol}
+              {this.mySymbol}
             </View>
             <View>
-              {myBus}
+              {this.myBus}
             </View> 
             <View>
-              {myNews}
+              {this.myStethoscope}
             </View> 
           </View>
           <View style={{ flexDirection: 'row' }}>
@@ -80,15 +83,15 @@ export default class main extends Component {
               <Text style = {{paddingLeft: 280,color:'yellow',fontSize:30,top: -50}}> 交通資訊 </Text>
             </View>
             <View>
-              <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 最新消息 </Text>
+              <Text style = {{paddingLeft: 250,color:'yellow',fontSize:30,top: -50}}> 掛號說明 </Text>
             </View>
           </View>
           <View style={{ flexDirection: 'row' }}>
             <View>
-              {myMap}
+              {this.myMap}
             </View>
             <View>
-              {myQ}
+              {this.myQ}
             </View> 
             <View>
               {this.myWeb}
