@@ -48,6 +48,7 @@ export default class main extends Component {
   constructor(props) {
     super(props);
   }
+  //Social link
   myWeb = <IconButton
   icon="link"
   color={Colors.white}
@@ -55,10 +56,11 @@ export default class main extends Component {
   style = {{position: 'relative', left: 400}}
   onPress={() => this.props.navigation.navigate('Link')}
   />;
+  // 
   render() {
     return (
         <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-          <Avatar.Image size={100} source={require('./tets.jpg')} />
+          <Avatar.Image size={100} source={require('../img/symbol.jpg')} />
           <View style={{ flexDirection: 'row' }}>
             <View>
               {mySymbol}
