@@ -4,50 +4,57 @@ import {
   StyleSheet,
   View,
   Text,
+  Linking,
 } from 'react-native';
 import { IconButton, Colors,Avatar } from 'react-native-paper';
 
-const myLine = <IconButton
-icon="android-messages"
-color={Colors.blueGrey100}
-size={150}
-style = {{position: 'relative', left: 80}}
-onPress={() => console.log('Pressed')}
-/>;
-const myFB = <IconButton
-icon="facebook"
-color={Colors.blue300}
-size={150}
-style = {{position: 'relative', left: 250}}
-onPress={() => console.log('Pressed')}
-/>;
-const myYt = <IconButton
-icon="youtube"
-color={Colors.red400}
-size={150}
-style = {{position: 'relative', left: 400}}
-onPress={() => console.log('Pressed')}
-/>;
 
 export default class link extends Component {
-  static navigationOptions = {
-    title: 'Welcome2',
-  };
+  openLine=()=>{
+		let url = 'https://page.line.me/cag6881a';
+        Linking.openURL(url) 
+  }
+  openFB=()=>{
+		let url = 'https://www.facebook.com/DLTZH/';
+        Linking.openURL(url) 
+  }
+  openYt=()=>{
+		let url = 'https://www.youtube.com/user/finehealthplace/playlists?disable_polymer=1';
+        Linking.openURL(url) 
+  }
+  myLine = <IconButton
+  icon="android-messages"
+  color={Colors.blueGrey100}
+  size={150}
+  style = {{position: 'relative', left: 80}}
+  onPress={this.openLine}
+  />;
+  myFB = <IconButton
+  icon="facebook"
+  color={Colors.blue300}
+  size={150}
+  style = {{position: 'relative', left: 250}}
+  onPress={this.openFB}
+  />;
+  myYt = <IconButton
+  icon="youtube"
+  color={Colors.red400}
+  size={150}
+  style = {{position: 'relative', left: 400}}
+  onPress={this.openYt}
+  />;
   render() {
     return (
         <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-          <View>
-            <Text style = {{paddingLeft: 155,color:'yellow',fontSize:40,top: -50}}> 社群連結 </Text>
-          </View>
           <View style={{flexDirection: 'row' }}>
             <View>
-              {myLine}
+              {this.myLine}
             </View>
             <View>
-              {myFB}
+              {this.myFB}
             </View> 
             <View>
-              {myYt}
+              {this.myYt}
             </View> 
           </View>
           <View style={{  flexDirection: 'row' }}>
