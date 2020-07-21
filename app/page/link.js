@@ -6,7 +6,7 @@ import {
   Text,
   Linking,
 } from 'react-native';
-import { IconButton, Colors,Avatar } from 'react-native-paper';
+import { IconButton, Colors } from 'react-native-paper';
 
 
 export default class link extends Component {

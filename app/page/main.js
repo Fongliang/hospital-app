@@ -33,7 +33,7 @@ export default class main extends Component {
   color={Colors.purple200}
   size={150}
   style = {{position: 'relative', left: 400}}
-  onPress={() => console.log('Pressed')}
+  onPress={() => this.props.navigation.navigate('stethoscope')}
   />;
   //stairs information
   myMap = <IconButton
