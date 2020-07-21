@@ -12,8 +12,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" options={{headerShown:false}} component={main} />
-        <Stack.Screen name="Link" options={{headerShown:false}} component={link} />
         <Stack.Screen name="Introduction" options={{headerShown:false}} component={Introduction} />
+        <Stack.Screen name="Link" options={{headerShown:false}} component={link} />
       </Stack.Navigator>
     </NavigationContainer>
   );
