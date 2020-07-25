@@ -39,8 +39,8 @@ const open2=()=>{
             title="網路掛號(24小時開放)"
             left={props => <List.Icon {...props} icon="microsoft-internet-explorer" />}
             titleStyle = {{fontSize:20}}>
-                <List.Item title=" 大林：https://app.tzuchi.com.tw/tchw/OpdReg/SecList_DL.aspx" onPress={open}/>
-                <List.Item title="斗六：https://app.tzuchi.com.tw/tchw/OpdReg/SecList_TL.aspx" onPress={open2}/>
+                <List.Item title=" 大林：https://app.tzuchi.com.tw/tchw/OpdReg/SecList_DL.aspx" onPress={open} left={props => <List.Icon {...props} icon="link" />}/>
+                <List.Item title="斗六：https://app.tzuchi.com.tw/tchw/OpdReg/SecList_TL.aspx" onPress={open2} left={props => <List.Icon {...props} icon="link" />}/>
             </List.Accordion>
             <List.Accordion
             title="自動掛號機"
