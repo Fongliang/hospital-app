@@ -7,6 +7,7 @@ import link from './page/link';
 import Introduction from './page/Introduction';
 import stethoscope from './page/stethoscope';
 import QA from './page/QA';
+import traffic from './page/traffic';
 // npx react-native run-android
 const Stack = createStackNavigator();
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Stack.Screen name="Link" options={{headerShown:false}} component={link} />
         <Stack.Screen name="stethoscope" options={{headerShown:false}} component={stethoscope} />
         <Stack.Screen name="QA" options={{headerShown:false}} component={QA} />
+        <Stack.Screen name="traffic" options={{headerShown:false}} component={traffic} />
       </Stack.Navigator>
     </NavigationContainer>
   );

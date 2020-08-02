@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LinearGradient from 'react-native-linear-gradient'
 import {
    View,
    Text,
@@ -75,29 +76,30 @@ export default class QA extends Component {
   render() {
     // const { read } = this.state;
     return (
-        <ScrollView>
-            <List.Section title = "常見Q&A" titleStyle = {{fontSize:30}}>
-                <List.Accordion
-                title={q1}  
-                left={props => <List.Icon {...props} icon="account-question" />}
-                titleStyle = {{fontSize:20}}>
-                    <List.Item title={a1} />
-                </List.Accordion>
-                <List.Accordion
-                title={q2}
-                left={props => <List.Icon {...props} icon="account-question" />}
-                titleStyle = {{fontSize:20}}>
-                    <List.Item title={a2} />
-                </List.Accordion>
-                <List.Accordion
-                title={q3}
-                left={props => <List.Icon {...props} icon="account-question" />}
-                titleStyle = {{fontSize:20}}>
-                    <List.Item title={a3} />
-                </List.Accordion>
-            </List.Section>
-        </ScrollView>
-        
+        <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style = {{flex:1}}>
+            <ScrollView>
+                <List.Section title = "常見Q&A" titleStyle = {{fontSize:30}}>
+                    <List.Accordion
+                    title={q1}  
+                    left={props => <List.Icon {...props} icon="account-question" />}
+                    titleStyle = {{fontSize:20}}>
+                        <List.Item title={a1} />
+                    </List.Accordion>
+                    <List.Accordion
+                    title={q2}
+                    left={props => <List.Icon {...props} icon="account-question" />}
+                    titleStyle = {{fontSize:20}}>
+                        <List.Item title={a2} />
+                    </List.Accordion>
+                    <List.Accordion
+                    title={q3}
+                    left={props => <List.Icon {...props} icon="account-question" />}
+                    titleStyle = {{fontSize:20}}>
+                        <List.Item title={a3} />
+                    </List.Accordion>
+                </List.Section>
+            </ScrollView>
+        </LinearGradient>
       );
   }
 }

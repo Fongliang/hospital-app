@@ -25,7 +25,7 @@ export default class main extends Component {
   color={Colors.green300}
   size={150}
   style = {{position: 'relative', left: 250}}
-  onPress={() => console.log('Pressed')}
+  onPress={() => this.props.navigation.navigate('traffic')}
   />;
   //stethoscope
   myStethoscope = <IconButton
