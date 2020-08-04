@@ -49,6 +49,9 @@ export default class traffic extends Component {
                   }}
                 />
               </MapView>
+              <Text style={ { bottom:'15%' }}></Text>
+              <Text style={ { bottom:'25%' }}></Text>
+              <Text style={ { bottom:'25%' }}></Text>
             </View>
           </ScrollView>
         </LinearGradient>
