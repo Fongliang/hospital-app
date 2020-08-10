@@ -9,11 +9,44 @@ import {
 } from 'react-native';
 import MapView, {PROVIDER_GOOGLE ,} from 'react-native-maps';
 import { Marker } from'react-native-maps';
+import { IconButton, Colors } from 'react-native-paper';
 
 export default class traffic extends Component {
   static navigationOptions = {
     title: 'Welcome2',
   };
+   // trafficBus
+   mytrafficBus = <IconButton
+   icon="bus-stop"
+   color={Colors.white}
+   size={100}
+   style = {{ left: '20%'}}
+   onPress={() => this.props.navigation.navigate('trafficBus')}
+   />;
+   // train
+   mytrain = <IconButton
+   icon="train-variant"
+   color={Colors.white}
+   size={100}
+   style = {{ left: '100%'}}
+   onPress={() => this.props.navigation.navigate('train')}
+   />;
+   //shuttleBus
+   myshuttleBus = <IconButton
+   icon="timetable"
+   color={Colors.white}
+   size={100}
+   style = {{left: '170%'}}
+   onPress={() => this.props.navigation.navigate('shuttleBus')}
+   />;
+   //mycar
+   mycar = <IconButton
+   icon="car"
+   color={Colors.white  }
+   size={100}
+   style = {{left: '250%'}}
+   onPress={() => this.props.navigation.navigate('mycar')}
+   />;
   render() {
     return (
         <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{flex:1}} >
@@ -26,6 +59,24 @@ export default class traffic extends Component {
             <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}>搭交通專車：本院另提供21條專車服務彰化、南投、雲林、嘉義、台南等地區民眾。</Text>
             <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}>搭接駁車：若您在日間來到大林鎮，您可以在大林後火車站，利用本院交通接駁車到醫院。</Text>
             <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}>本院提供叫車服務：請撥打分機8119、8110，由保全為您服務。</Text>
+            <View style={{ flexDirection: 'row' , top:'2%'}}>
+              <View>
+                {this.mytrafficBus}
+                <Text style = {{left: '55%',color:'white',fontSize:25,top: '-20%'}}>客運</Text>
+              </View>
+              <View>
+                {this.mytrain}
+                <Text style = {{left: '130%', color:'white',fontSize:25,top: '-20%'}}>火車</Text>
+              </View>
+              <View>
+                {this.myshuttleBus}
+                <Text style = {{left: '195%',color:'white',fontSize:25,top: '-20%'}}>接駁車</Text>
+              </View> 
+              <View>
+                {this.mycar}
+                <Text style = {{left: '280%',color:'white',fontSize:25,top: '-20%'}}>自用車</Text>
+              </View> 
+          </View>
             <View style={{top:'5%'}}>
               <Image 
                 // style={ { width: 400 ,height:400,paddingLeft:'50%' }}
