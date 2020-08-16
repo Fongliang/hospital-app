@@ -24,6 +24,7 @@ const config = {
 
 var q1,q2,q3
 var a1,a2,a3
+var test
 export default class QA extends Component {
     constructor() {
         super();
@@ -37,7 +38,7 @@ export default class QA extends Component {
           this.state = {
             read: ""
           };
-          this.database.ref("Q1/question").on("value", e => {
+          this.database.ref("QA/Q1/question").on("value", e => {
             q1 = e.val();
             // this.setState({ read: q1 });
             //console.log(data)
@@ -45,23 +46,27 @@ export default class QA extends Component {
             // console.log(data)
             // this.setState({ read: data });
           });
-          this.database.ref("Q1/answer").on("value", e => {
+          this.database.ref("QA/Q1/answer").on("value", e => {
             a1 = e.val();
-            this.setState({ read: a1 });
+            // this.setState({ read: a1 });
           });
-          this.database.ref("Q2/question").on("value", e => {
+          // this.database.ref("QA").orderByChild("question").equalTo("外科").on("value", e => {
+          //   test = e.val();
+          //   console.log(test)
+          //   // this.setState({ read: a1 });
+          // });
+          this.database.ref("QA/Q2/question").on("value", e => {
             q2 = e.val();
           });
-          this.database.ref("Q2/answer").on("value", e => {
+          
+          this.database.ref("QA/Q2/answer").on("value", e => {
             a2 = e.val();
-            this.setState({ read: a1 });
           });
-          this.database.ref("Q3/question").on("value", e => {
+          this.database.ref("QA/Q3/question").on("value", e => {
             q3 = e.val();
           });
-          this.database.ref("Q3/answer").on("value", e => {
+          this.database.ref("QA/Q3/answer").on("value", e => {
             a3 = e.val();
-            this.setState({ read: a1 });
           });
           
       }

@@ -35,13 +35,13 @@ export default class main extends Component {
   style = {{position: 'relative', left: 400}}
   onPress={() => this.props.navigation.navigate('stethoscope')}
   />;
-  //stairs information
+  //building guide information
   myMap = <IconButton
   icon="google-maps"
   color={Colors.indigo100}
   size={150}
   style = {{position: 'relative', left: 80}}
-  onPress={() => console.log('Pressed')}
+  onPress={() => this.props.navigation.navigate('guide')}
   />;
   //Q&A
   myQ = <IconButton
