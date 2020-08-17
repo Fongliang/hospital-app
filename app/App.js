@@ -13,6 +13,7 @@ import shuttleBus from './page/shuttleBus';
 import train from './page/train';
 import mycar from './page/mycar';
 import guide from './page/guide';
+import checking from './page/checking';
 
 // npx react-native run-android
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ function App() {
         <Stack.Screen name="train" options={{headerShown:false}} component={train} />
         <Stack.Screen name="mycar" options={{headerShown:false}} component={mycar} />
         <Stack.Screen name="guide" options={{headerShown:false}} component={guide} />
+        <Stack.Screen name="checking" options={{headerShown:false}} component={checking} />
       </Stack.Navigator>
     </NavigationContainer>
   );
