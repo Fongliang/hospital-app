@@ -7,9 +7,40 @@ import {
     ToastAndroid,
     DrawerLayoutAndroid,
     TextInput,
+    ScrollView,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
+import { IconButton, Button ,Colors } from 'react-native-paper';
 
 export default class checking extends Component {
+    // 影像醫學科
+   myImage = <Button
+   mode="contained"
+   style = {{left: '120%'}}
+   color='green'
+   onPress={() => this.props.navigation.navigate('myImage')}
+   >影像醫學科</Button>;
+   // 核子醫學科
+   mynuclear = <Button
+   mode="contained"
+   style = {{left: '220%'}}
+   color='green'
+   onPress={() => this.props.navigation.navigate('myImage')}
+   >核子醫學科</Button>;
+   //臨床病理科
+   Clinical = <Button
+   mode="contained"
+   style = {{left: '320%'}}
+   color='green'
+   onPress={() => this.props.navigation.navigate('myImage')}
+   >臨床病理科</Button>;
+   //解剖病理科
+   Anatomy = <Button
+   mode="contained"
+   style = {{left: '420%'}}
+   color='green'
+   onPress={() => this.props.navigation.navigate('myImage')}
+   >解剖病理科</Button>;
     render() {
         var navigationView = (
             <View style={{flex: 1, alignItems:'center'}}>
@@ -72,9 +103,58 @@ export default class checking extends Component {
                         multiline={true}
                     />
                 </View> */}
+                <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={{flex:1}} >
+                    <ScrollView>
+                        <Text style = {{paddingLeft:'10%',color:'yellow',fontSize:30,top:'1%'}}>◎ 檢驗檢查</Text>
+                        <Text style = {{paddingLeft:'10%',paddingRight:'0%',color:'pink',fontSize:23,top:'2%'}}>特色簡介</Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingRight:'2%',color:'black',fontSize:18,top:'4%'}}></Text>
+                        <Text style = {{paddingLeft:'10%',paddingRight:'0%',color:'pink',fontSize:23,top:'2%'}}>科部介紹</Text>
+                        <View style={{ flexDirection: 'row' , top:'2%'}}>
+                        <View>
+                            {this.myImage}
+                            <Text></Text>
+                        </View>
+                        <View>
+                            {this.mynuclear}
+                        </View>
+                        <View>
+                            {this.Clinical}
+                        </View> 
+                        <View>
+                            {this.Anatomy}
+                        </View> 
+                    </View>
+                    </ScrollView>
+                </LinearGradient>
             </DrawerLayoutAndroid>
         );
     }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    center: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    button: {
+      margin: 20,
+      padding: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
+      backgroundColor: 'white',
+      borderRadius: 9,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    buttonText: {
+      color: '#fff',
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+  });
