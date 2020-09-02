@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { IconButton, Colors,Avatar } from 'react-native-paper';
 import Swiper from 'react-native-swiper';
+import com.robotemi.sdk.map
 
 export default class main extends Component {
   constructor(props) {
